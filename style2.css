@@ -1,0 +1,28 @@
+body{
+    background-color:#fcf6e5;
+ }
+ .hero ul li{
+    margin:0 25px;
+ }
+ .hero ul li a{
+padding:0 10px;
+ }
+.hero ul li a::after{
+    content:'';
+    width:0;
+    top:-100px;
+    height:5px;
+     left:50%;
+    
+    background-color:rgb(162, 162, 205);
+    transform: translateX(-50%);
+    transition: 0.5s;
+ }
+ .hero ul li a:hover::after{
+    width:100%;
+ }
+ a{
+   text-decoration: none;
+   color:black;
+ }
+ 
