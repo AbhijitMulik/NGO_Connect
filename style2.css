@@ -1,8 +1,16 @@
 body{
     background-color:#fcf6e5;
  }
-container{
-   height: 10px;
+
+
+.Navbar{
+   position: fixed;
+   width:100%;
+}
+.container{
+   position:relative;
+   top:50px;
+   z-index: -1;
 
 }
 .row img{
@@ -12,7 +20,7 @@ h1{
    color:rgb(71, 14, 124);
    font-size: 50px;
    text-align: center;
-   
+
 }
 h2{
    text-align: center;
@@ -27,3 +35,5 @@ P{
 h3{
    color:black
 }
+
+
