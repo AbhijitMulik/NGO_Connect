@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #89d4cf, #6e45e2);
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    margin: auto; 
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #333;
+}
+
+input::placeholder {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Error message styles */
+.alert {
+    text-align: left;
+    font-size: 14px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Ensure errors stay inside the container */
+.errors-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
