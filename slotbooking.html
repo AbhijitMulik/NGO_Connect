@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Booking for Food Donation</title>
+    <link rel="stylesheet" href="./slotbooking.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+         <h1>Slot Booking for Food Donation</h1>
+        </div>
+        <div class="info-text">
+           <h3 class="info-text">Visit Your Nearest NGO and get the satisfaction of feeding others.<br>Why Wait, Book Slots ASAP!</h3>
+        </div>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="ngo-type">Select NGO Type</label>
+                <select id="ngo-type">
+                    <option value="Children NGOs">Children NGOs</option>
+                    <option value="Elderly NGOss">Elderly NGOs</option>
+                    <option value="Diffrently Abled NGOs">Diffrently Abled NGOs</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ngo-name">Select NGO Name</label>
+                <select id="ngo-name">
+                    <option value="ngo1">NGO 1</option>
+                    <option value="ngo2">NGO 2</option>
+                    <option value="ngo3">NGO 3</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <label for="month-select">Select Month</label>
+                <select id="month-select"></select>
+
+                <label for="year-select">Select Year</label>
+                <select id="year-select"></select>
+            </div>
+
+            <div id="calendar-grid">
+                <!-- Calendar grid for dates will be generated here -->
+            </div>
+        </div>
+
+        <div class="form-output">
+            <h3>Selected Details:</h3>
+            <div id="selected-details"></div>
+        </div>
+
+        <button id="enter-btn" class="action-btn">Enter</button>
+
+        <footer>
+            <a href="https://docs.google.com/forms/d/1CmFqlecc_8aDpMxhnB71crDI3mRaies9rKuLLJ6q478/edit?ts=66ef0af5" class="donate-btn">"Take a step to fill the form ,and make a diffrence today >>"</a>
+        </footer>
+    </div>
+
+    <script src="./slotbooking.js"></script>
+</body>
+</html>
