@@ -6,22 +6,25 @@ body {
     background-color: #FDFFE2;
 }
 
+
 .container {
-    display: block; /* Ensure block-level display */
     background-color: #cce0ff;
     padding: 30px;
     border-radius: 10px;
-    width: 80%;
+    width: 90%;
     max-width: 800px;
-    margin: 20px auto; /* This ensures spacing between multiple containers */
-    position: relative; /* To allow positioning the button */
+    margin: 20px auto;
+    position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Image Styling */
 .heading img {
     display: block;
     margin: 0 auto 20px auto;
-    width: 100px;
+    width: 100%;
+    max-width: 150px; 
+    height: auto; 
 }
 
 .content {
@@ -30,6 +33,7 @@ body {
     text-align: justify;
 }
 
+/* Donate Button Styling */
 .donate-btn {
     background-color: #2b1457;
     color: white;
@@ -40,10 +44,79 @@ body {
     cursor: pointer;
     text-decoration: none;
     position: absolute;
-    bottom: 20px; /* Placing the button at the bottom */
-    right: 20px;  /* Placing the button at the right */
+    bottom: 20px; 
+    right: 20px;  
 }
 
 .donate-btn:hover {
     background-color: #004bb5;
+}
+
+h1 {
+    color: #233763;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 50px;
+    text-align: center;
+}
+
+h4 {
+    color: #4b0798;
+    font-style: italic;
+    font-weight: 500px;
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
+
+    .donate-btn {
+        font-size: 16px;
+        padding: 8px 15px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .heading img {
+        max-width: 120px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .content {
+        font-size: 12px;
+    }
+
+    .donate-btn {
+        font-size: 14px;
+        padding: 6px 10px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .heading img {
+        max-width: 100px; 
+    }
 }
