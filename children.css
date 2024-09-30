@@ -1,21 +1,69 @@
 
+/* Body Styles */
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 20px;
     background-color: #FDFFE2;
+    padding-top: 60px; 
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
 
+/* Navbar Styles */
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #002855;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: 60px;
+}
+
+.btn-login {
+    background-color: #d6d6d6;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+/* Container Styles */
 .container {
     background-color: #cce0ff;
-    padding: 30px;
     border-radius: 10px;
     width: 90%;
     max-width: 800px;
     margin: 20px auto;
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Heading Styles */
+h1 {
+    color: #233763;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 50px;
+    text-align: center;
+    background-color: #faffe3;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Subheading Styles */
+h4 {
+    color: #4b0798;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 0;
 }
 
 /* Image Styling */
@@ -23,10 +71,11 @@ body {
     display: block;
     margin: 0 auto 20px auto;
     width: 100%;
-    max-width: 150px; 
-    height: auto; 
+    max-width: 150px;
+    height: auto;
 }
 
+/* Content Styles */
 .content {
     font-size: 16px;
     line-height: 1.5;
@@ -44,31 +93,118 @@ body {
     cursor: pointer;
     text-decoration: none;
     position: absolute;
-    bottom: 20px; 
-    right: 20px;  
+    bottom: 20px;
+    right: 20px;
 }
 
 .donate-btn:hover {
     background-color: #004bb5;
 }
 
-h1 {
-    color: #233763;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 50px;
-    text-align: center;
+/* Navigation Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-h4 {
-    color: #4b0798;
-    font-style: italic;
-    font-weight: 500px;
-    font-size: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
+.menu li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    border: 2px solid transparent;
+    font-weight: bold;
 }
 
+.menu li a.donate {
+    color: rgb(95, 183, 189);
+    border: 2px dashed rgb(97, 187, 192);
+}
+
+.menu li a:hover {
+    color: purple;
+    border: 2px solid purple;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #FDFFE2;
+    padding: 40px;
+    color: #000;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column ul {
+    font-size: 14px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-column ul li a:hover {
+    color: #007BFF;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+footer p a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -91,7 +227,7 @@ h4 {
     }
 
     .heading img {
-        max-width: 120px; 
+        max-width: 120px;
     }
 }
 
@@ -117,6 +253,6 @@ h4 {
     }
 
     .heading img {
-        max-width: 100px; 
+        max-width: 100px;
     }
 }
