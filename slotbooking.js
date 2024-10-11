@@ -3,10 +3,41 @@ document.addEventListener("DOMContentLoaded", function () {
     const yearSelect = document.getElementById('year-select');
     const calendarGrid = document.getElementById('calendar-grid');
     const selectedDetails = document.getElementById('selected-details');
+    const timeSlot = document.getElementById('time-slot'); // Time slot selection
     let selectedDate = null;
+
+    // NGO names based on type
+    const ngoNames = {
+        children: ['Vatsalya Trust', 'Baalanand', 'Catalyst for Social Action', 'Prerna', 'Shraddhanand Organization'],
+        elderly: ['Adharwad Trust', 'ADAPT-Able Disable All People Together', 'Kamla Mehta Donar Blind School'],
+        'differently-abled': ['Prerna', 'Moneylife Foundation', 'HelpAge India', 'Silver Innings Foundation']
+    };
+
+    // Populate NGO names based on the selected NGO type
+    const ngoType = document.getElementById('ngo-type');
+    const ngoName = document.getElementById('ngo-name');
+
+    function updateNgoNames() {
+        const selectedType = ngoType.value;
+        ngoName.innerHTML = ''; // Clear previous options
+
+        ngoNames[selectedType].forEach(name => {
+            const option = document.createElement('option');
+            option.value = name;
+            option.textContent = name;
+            ngoName.appendChild(option);
+        });
+    }
+
+    // Add event listener for NGO type change
+    ngoType.addEventListener('change', updateNgoNames);
+
+    // Call the function initially to set the correct NGO names on page load
+    updateNgoNames();
 
     // Populate month and year select options
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const currentYear = new Date().getFullYear();
 
     for (let i = 0; i < months.length; i++) {
@@ -16,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         monthSelect.appendChild(option);
     }
 
-    for (let i = currentYear - 10; i <= currentYear + 10; i++) {
+    for (let i = 2024; i <= 2050; i++) {
         const option = document.createElement('option');
         option.value = i;
         option.textContent = i;
@@ -27,15 +58,25 @@ document.addEventListener("DOMContentLoaded", function () {
     monthSelect.value = new Date().getMonth();
     yearSelect.value = new Date().getFullYear();
 
-    // Generate calendar
+    // Generate calendar with day headers
     function generateCalendar(month, year) {
         calendarGrid.innerHTML = ''; // Clear previous grid
+
+        // Create day headers
+        daysOfWeek.forEach(day => {
+            const dayHeader = document.createElement('div');
+            dayHeader.classList.add('calendar-day-header');
+            dayHeader.textContent = day;
+            calendarGrid.appendChild(dayHeader);
+        });
+
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = 32 - new Date(year, month, 32).getDate();
 
         // Create empty cells for days before the first day of the month
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement('div');
+            emptyCell.classList.add('calendar-empty-cell');
             calendarGrid.appendChild(emptyCell);
         }
 
@@ -58,12 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update selected details
     function updateSelectedDetails(day, month, year) {
-        const ngoType = document.getElementById('ngo-type').value;
-        const ngoName = document.getElementById('ngo-name').value;
+        const selectedNgoType = ngoType.value;
+        const selectedNgoName = ngoName.value;
+        const selectedTimeSlot = timeSlot.options[timeSlot.selectedIndex].textContent; // Get time slot value
+        const dayOfWeek = new Date(year, month, day).toLocaleString('en-US', { weekday: 'long' });
         selectedDetails.innerHTML = `
-            <p><strong>NGO Type:</strong> ${ngoType}</p>
-            <p><strong>NGO Name:</strong> ${ngoName}</p>
-            <p><strong>Selected Date:</strong> ${day} ${months[month]}, ${year}</p>
+            <p><strong>NGO Type:</strong> ${selectedNgoType}</p>
+            <p><strong>NGO Name:</strong> ${selectedNgoName}</p>
+            <p><strong>Selected Date:</strong> ${dayOfWeek}, ${day} ${months[month]}, ${year}</p>
+            <p><strong>Selected Time Slot:</strong> ${selectedTimeSlot}</p>
         `;
     }
 

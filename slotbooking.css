@@ -18,7 +18,7 @@ body {
 
 h1 {
     text-align: center;
-    color:white;
+    color: white;
 }
 
 .info-text {
@@ -132,9 +132,10 @@ footer {
     background-color: #263962;
 }
 
-.box{
+.box {
     background: #263962;
 }
-.info-text{
+
+.info-text {
     background-color: #e2fdff;
 }
