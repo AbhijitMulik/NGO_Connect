@@ -18,8 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ngo_type = mysqli_real_escape_string($conn, $_POST['ngo_type']);
     $ngo_name = mysqli_real_escape_string($conn, $_POST['ngo_name']);
     $booking_date = mysqli_real_escape_string($conn, $_POST['booking_date']);
+     $timeslot = mysqli_real_escape_string($conn, $_POST['timeslot']);
 
-    $sql = "INSERT INTO bookings (ngo_type, ngo_name, booking_date) VALUES ('$ngo_type', '$ngo_name', '$booking_date')";
+     $sql = "INSERT INTO bookings (ngo_type, ngo_name, booking_date, timeslot) VALUES ('$ngo_type', '$ngo_name', '$booking_date', '$timeslot')";
     
     if (mysqli_query($conn, $sql)) {
         echo json_encode(['status' => 'success', 'message' => 'Booking confirmed!']);
