@@ -22,13 +22,21 @@ if ($conn->connect_error) {
 }
 
 // Query to get booked dates
-$sql = "SELECT booking_date FROM bookings"; // Adjust according to your table structure
+$sql = "SELECT booking_date ,timeslot FROM bookings"; // Adjust according to your table structure
 $result = $conn->query($sql);
 
 $bookedDates = [];
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $bookedDates[] = $row['booking_date']; // Make sure the format matches YYYY-MM-DD
+        $bookedDates[] = $row['booking_date'];
+         $timeslot = $row['timeslot'];// Make sure the format matches YYYY-MM-DD
+          // Group time slots by date
+        if (!isset($bookedDates[$date])) {
+            $bookedDates[$date] = [];
+        }
+
+        $bookedDates[$date][] = $timeslot; // Append timeslot to the respective date
+
     }
 }
 
